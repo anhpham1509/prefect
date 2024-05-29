@@ -83,7 +83,6 @@ If you don't use the `--type` flag to specify an infrastructure type, you are pr
 
     | Infrastructure Type                  | Description                                                                                                                |
     | ------------------------------       | -------------------------------------------------------------------------------------------------------------------------- |
-    | Prefect Agent                        | Execute flow runs on heterogeneous infrastructure using infrastructure blocks.                                              |
     | Process                              | Execute flow runs as subprocesses on a worker. Works well for local execution when first getting started.                    |
     | AWS Elastic Container Service        | Execute flow runs within containers on AWS ECS. Works with EC2 and Fargate clusters. Requires an AWS account.               |
     | Azure Container Instances            | Execute flow runs within containers on Azure's Container Instances service. Requires an Azure account.                      |
@@ -102,7 +101,6 @@ If you don't use the `--type` flag to specify an infrastructure type, you are pr
 
     | Infrastructure Type           | Description              |
     | ----------------------------  | ------------------------ |
-    | Prefect Agent                 | Execute flow runs on heterogeneous infrastructure using infrastructure blocks.                                                  |
     | Process                       | Execute flow runs as subprocesses on a worker. Works well for local execution when first getting started.                       |
     | AWS Elastic Container Service | Execute flow runs within containers on AWS ECS. Works with EC2 and Fargate clusters. Requires an AWS account.                  |
     | Azure Container Instances     | Execute flow runs within containers on Azure's Container Instances service. Requires an Azure account.                         |

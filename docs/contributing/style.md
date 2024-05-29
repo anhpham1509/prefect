@@ -166,19 +166,22 @@ Upon executing a command that creates an object, the output message should offer
 
 Output Example:
 ```bash
-$ prefect work-queue create testing
+$ prefect work-pool create my-work-pool- --type process
 
-Created work queue with properties:
-    name - 'abcde'
-    uuid - 940f9828-c820-4148-9526-ea8107082bda
-    tags - None
-    deployment_ids - None
+Created work pool 'my-work-pool'!
 
-Start an agent to pick up flows from the created work queue:
-    prefect agent start -q 'abcde'
+To start a worker for this work pool, run:
 
-Inspect the created work queue:
-    prefect work-queue inspect 'abcde'
+        prefect worker start --pool my-work-pool
+
+└── UUID: b50e2bee-f065-40b9-924d-7c196d1a332e
+└── Type: process
+└── Description: None
+└── Status: Not ready
+└── URL: https://app.prefect.cloud/account/43a83e5a-b23e-47cf-9652-5c3dc511f7e1/workspace/75241259-81a4-4879-92aa-fc3f1df3e6e4/work-pools/work-pool/my-work-pool
+
+Start a worker to pick up flow runs:
+    prefect worker start --pool my-work-pool'
 
 ```
 
@@ -208,8 +211,8 @@ output_msg = dedent(
         tags - {tags or None}
         deployment_ids - {deployment_ids or None}
 
-    Start an agent to pick up flows from the created work queue:
-        prefect agent start -q {name!r}
+    Start a worker to pick up flows from the created work queue:
+        prefect worker start -q {name!r}
 
     Inspect the created work queue:
         prefect work-queue inspect {name!r}
