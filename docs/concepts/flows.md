@@ -1154,7 +1154,7 @@ While the cancellation process is robust, there are a few issues than can occur:
 
 !!! tip "Enhanced cancellation"
     We are working on improving cases where cancellation can fail.
-    You can try the improved cancellation experience by enabling the `PREFECT_EXPERIMENTAL_ENABLE_ENHANCED_CANCELLATION` setting on your worker or agents:
+    You can try the improved cancellation experience by enabling the `PREFECT_EXPERIMENTAL_ENABLE_ENHANCED_CANCELLATION` setting on your worker:
 
     <div class="terminal">
     ```bash

@@ -20,7 +20,7 @@ Work pools and workers bridge the Prefect _orchestration environment_ with your 
 
 ## Work pool overview
 
-Work pools organize work for execution. Work pools have types corresponding to the infrastructure that will execute the flow code, as well as the delivery method of work to that environment. Pull work pools require [workers](#worker-overview) (or less ideally, [agents](/concepts/agents)) to poll the work pool for flow runs to execute. [Push work pools](/guides/deployment/push-work-pools) can submit runs directly to your serverless infrastructure providers such as Google Cloud Run, Azure Container Instances, and AWS ECS without the need for an agent or worker. [Managed work pools](/guides/managed-execution) are administered by Prefect and handle the submission and execution of code on your behalf.
+Work pools organize work for execution. Work pools have types corresponding to the infrastructure that will execute the flow code, as well as the delivery method of work to that environment. Pull work pools require [workers](#worker-overview) to poll the work pool for flow runs to execute. [Push work pools](/guides/deployment/push-work-pools) can submit runs directly to your serverless infrastructure providers such as Google Cloud Run, Azure Container Instances, and AWS ECS without the need for an agent or worker. [Managed work pools](/guides/managed-execution) are administered by Prefect and handle the submission and execution of code on your behalf.
 
 !!! tip "Work pools are like pub/sub topics"
     It's helpful to think of work pools as a way to coordinate (potentially many) deployments with (potentially many) workers through a known channel: the pool itself. This is similar to how "topics" are used to connect producers and consumers in a pub/sub or message-based system. By switching a deployment's work pool, users can quickly change the worker that will execute their runs, making it easy to promote runs through environments or even debug locally.
@@ -449,8 +449,6 @@ As long as your deployment's infrastructure block supports it, you can use work 
 ## Worker overview
 
 Workers are lightweight polling services that retrieve scheduled runs from a work pool and execute them.
-
-Workers are similar to agents, but offer greater control over infrastructure configuration and the ability to route work to specific types of execution environments.
 
 Workers each have a type corresponding to the execution environment to which they will submit flow runs. Workers are only able to poll work pools that match their type. As a result, when deployments are assigned to a work pool, you know in which execution environment scheduled flow runs for that deployment will run.
 

@@ -26,8 +26,4 @@ search:
 | __[Task Runners](/concepts/task-runners)__         | Configure how tasks are run - concurrently, in parallel, or in a distributed environment. |
 | __[Automations](/concepts/automations)__           | Configure actions that Prefect executes automatically based on trigger conditions.         |
 
-|  Block and Agent-Based Deployments                 | Description   |
-| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| __[Agents](/concepts/agents)__                           | Like untyped workers. |
-
 Many features specific to [Prefect Cloud](/cloud/) are in their own navigation subheading.
